@@ -1,5 +1,6 @@
-import { DenoDoc } from "./deno-doc.model.ts";
-import JsDoc = DenoDoc.JsDoc;
+import { type DenoDoc } from "./deno-doc.model.ts";
+
+type JsDoc = DenoDoc.JsDoc;
 
 export interface JsDocObject {
   example?: string;
@@ -158,7 +159,7 @@ export function PropertyJsDocParse(doc?: JsDoc): PropertyJsDocObject {
       if (prop) {
         result[prop as keyof PropertyJsDocObject] = getNormalizeString(
           value,
-          "@" + prop,
+          "@" + prop
         );
       }
     }
